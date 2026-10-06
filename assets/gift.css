@@ -43,3 +43,17 @@ body.gift-opened{overflow:hidden}
 .wish-privacy{margin:9px 0 0;color:#dec29c;font-size:.69rem;line-height:1.55}
 @media(max-width:700px){.share-final{padding:62px 16px 75px}.gift-invite{margin:30px auto 34px;padding:12px 19px 29px}.gift-icon{width:min(63vw,240px)}.gift-invite h3{font-size:2.15rem}.gift-invite>p:not(.gift-kicker){font-size:.85rem}.share-art{width:min(100%,375px)}.gift-modal{padding:8px}.gift-dialog{max-height:96svh;padding:24px 17px 25px}.gift-dialog h2{margin:8px 36px;font-size:1.75rem}.gift-dialog-desc{font-size:.79rem}.gift-dialog-body{grid-template-columns:1fr;gap:21px}.gift-bank{width:min(100%,330px);margin:auto}.gift-bank img{max-width:270px}.wishes-form h3{font-size:1.5rem}.gift-close{top:7px;right:8px}}
 @media(prefers-reduced-motion:reduce){.gift-open,.share-download,.wish-submit{transition:none}}
+
+/* Matching gold finish for the invitation's primary controls. */
+.hero .scroll-cue,.invite-copy>.button,.topbar .music,.map-directions{border:1px solid #ffeba8;background:linear-gradient(125deg,#a96c26 0%,#fceaa6 29%,#d6a34d 52%,#fff1b5 77%,#a97628 100%);box-shadow:0 7px 19px rgba(30,0,6,.3),inset 0 1px 0 rgba(255,255,255,.62);color:#520012;font-weight:700;text-decoration:none;transition:transform .2s ease,filter .2s ease,box-shadow .2s ease}
+.hero .scroll-cue:hover,.invite-copy>.button:hover,.topbar .music:hover,.map-directions:hover{background:linear-gradient(125deg,#a96c26 0%,#fceaa6 29%,#d6a34d 52%,#fff1b5 77%,#a97628 100%);color:#520012;filter:brightness(1.08);transform:translateY(-2px);box-shadow:0 11px 25px rgba(30,0,6,.38),inset 0 1px 0 rgba(255,255,255,.7)}
+.hero .scroll-cue:focus-visible,.invite-copy>.button:focus-visible,.topbar .music:focus-visible,.map-directions:focus-visible{outline:3px solid #fff2bc;outline-offset:3px}
+.topbar .music{border-radius:999px;padding:8px 15px}
+
+/* The route illustration is inert; only its separate Maps button navigates. */
+.map-section .map-frame{width:min(100%,900px);height:auto;margin:0 auto;border:6px solid #e6c07a;background:#fff7e5;box-shadow:0 16px 42px rgba(0,0,0,.28)}
+.venue-map-image{display:block;width:100%;height:auto;user-select:none}
+.map-caption{max-width:50ch;margin:17px auto 20px;color:#f5ddae;font-size:.86rem;line-height:1.55}
+.map-directions{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:50px;padding:13px 23px;border-radius:2px;font:.78rem/1.4 'Be Vietnam Pro',sans-serif;letter-spacing:.065em}
+@media(max-width:700px){.map-section .map-frame{border-width:4px}.map-caption{font-size:.76rem}.map-directions{max-width:100%;padding:13px 15px;font-size:.72rem}}
+@media(prefers-reduced-motion:reduce){.hero .scroll-cue,.invite-copy>.button,.topbar .music,.map-directions{transition:none}}

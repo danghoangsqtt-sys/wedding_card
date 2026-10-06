@@ -32,10 +32,14 @@
     .gallery-head .script{color:#8b1e37}.details{background:var(--line)}.detail{background:#fff}.detail .icon{font-family:'Times New Roman',serif;color:#aa4964}.detail h3{font-family:'Times New Roman',serif}.map-section{background:#f9dce4 var(--floral) center/cover no-repeat;text-align:center}.map-section .headline{margin-bottom:28px}.map-frame{width:min(100%,900px);height:450px;margin:auto;border:9px solid #fff;box-shadow:0 16px 42px rgba(116,33,58,.2)}.map-frame iframe{width:100%;height:100%;border:0}
     .share{background:#f9dce4 var(--floral) center/cover no-repeat}.share-card{box-shadow:0 20px 50px rgba(91,24,46,.18)}.share-card small{color:#a43655}.share-card h3{color:#8d2441}.outline{border-color:var(--wine);background:#fff;color:var(--wine)}.outline:hover{background:var(--wine);color:#fff}.footer{background:#7d2140;color:#fff3f5}.footer .script{color:#ffd6e0}.footer p{color:#f5dbe2}
     @media(max-width:700px){.invite-copy{padding:25px 20px}.hero{display:grid;grid-template-columns:1fr;place-items:end center}.hero-img{left:50%;transform:translateX(-50%);width:74vw;height:62vh;bottom:8vh;opacity:.33}.hero-copy{grid-column:1;margin:0;padding:110px 23px 65px;align-self:start}.hero h1{font-size:4.8rem}.map-frame{height:340px}}
+    /* Preserve every photo's natural composition in the scrolling album. */
+    .gallery{grid-auto-columns:minmax(280px,43vw);gap:22px;align-items:center;padding-top:12px}.gallery figure,.gallery figure:nth-child(2n){height:min(68vh,560px);margin:0;display:grid;place-items:center;background:#fff;border:1px solid rgba(141,36,65,.15);box-shadow:0 10px 24px rgba(91,24,46,.10)}.gallery img{width:100%;height:100%;padding:8px;object-fit:contain;object-position:center;transition:transform .35s ease}.gallery figure:hover img{transform:scale(1.015)}
+    @media(max-width:700px){.gallery{grid-auto-columns:82vw;gap:14px}.gallery figure,.gallery figure:nth-child(2n){height:70vh}}
   </style>
 </head>
 <body>
   <div class="hearts" aria-hidden="true" id="hearts"></div>
+  <audio id="background-audio" loop preload="metadata"><source src="assets/wedding-background.mp3" type="audio/mpeg"></audio>
   <header class="topbar"><span class="monogram">L &amp; T</span><button class="music" id="music" type="button" aria-pressed="false">♪ Bật nhạc</button></header>
   <section class="hero" aria-label="Thiệp mời thành hôn">
     <img class="hero-img" src="assets/hero.webp" alt="Ảnh cô dâu chú rể" />
@@ -44,7 +48,7 @@
   <main>
     <section class="section intro" id="loi-moi" data-reveal><p class="script">Save the date</p><h2 class="headline">Một lời hẹn cho<br>ngày yêu thương</h2><p>Sự hiện diện của bạn là niềm vui và là lời chúc phúc quý giá nhất dành cho chúng tôi trong khoảnh khắc bắt đầu hành trình mới.</p><span class="flourish">❦</span></section>
     <section class="section invitation" data-reveal>
-      <div class="invite-photo"><img src="assets/cover.webp" alt="Khoảnh khắc cặp đôi nhìn nhau" /></div>
+      <div class="invite-photo"><img src="assets/gallery/le-M___5879.webp" alt="Khoảnh khắc cặp đôi nhìn nhau" /></div>
       <div class="invite-copy"><div class="eyebrow">Thiệp mời lễ thành hôn</div><h2>Chúng tôi<br>về chung một nhà</h2><p>Trân trọng kính mời bạn và gia đình đến dự buổi tiệc thân mật, cùng nâng ly chúc mừng cho hạnh phúc của chúng tôi.</p><div class="date-line"><span>Chủ nhật</span><strong>—</strong><span>Hẹn gặp bạn</span></div><a class="button" href="#thong-tin">Xem thông tin buổi tiệc</a></div>
     </section>
     <section class="section" style="padding-bottom:50px" data-reveal><div class="gallery-head"><div><p class="script">Our story</p><h2 class="headline">Những khung hình<br>của chúng mình</h2></div><p>Vuốt để xem từng khoảnh khắc. Mỗi tấm ảnh là một chương nhỏ trong câu chuyện tình yêu.</p></div></section>
@@ -66,7 +70,7 @@
     document.getElementById('qr').src='https://api.qrserver.com/v1/create-qr-code/?size=220x220&format=svg&data='+encodeURIComponent(inviteUrl);
     const observer=new IntersectionObserver(entries=>entries.forEach(e=>e.target.classList.toggle('visible',e.isIntersecting)),{threshold:.18});document.querySelectorAll('[data-reveal]').forEach(el=>observer.observe(el));
     const hearts=document.getElementById('hearts');function heart(){const e=document.createElement('span');e.className='heart';e.textContent='♥';e.style.left=Math.random()*100+'vw';e.style.setProperty('--drift',(Math.random()*160-80)+'px');e.style.animationDuration=(6+Math.random()*6)+'s';e.style.fontSize=(12+Math.random()*16)+'px';hearts.append(e);setTimeout(()=>e.remove(),12500)}setInterval(heart,780);heart();heart();
-    let audioCtx,playing=false,timer;const notes=[261.63,329.63,392,523.25,392,329.63,293.66,349.23,440,587.33,440,349.23];function playTone(f,t){const o=audioCtx.createOscillator(),g=audioCtx.createGain();o.type='sine';o.frequency.value=f;g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.035,t+.05);g.gain.exponentialRampToValueAtTime(.0001,t+.7);o.connect(g).connect(audioCtx.destination);o.start(t);o.stop(t+.72)}function loop(){let t=audioCtx.currentTime;notes.forEach((n,i)=>playTone(n,t+i*.42));timer=setTimeout(loop,notes.length*420)}document.getElementById('music').onclick=async function(){if(!audioCtx)audioCtx=new AudioContext();if(!playing){await audioCtx.resume();playing=true;this.textContent='Ⅱ Tắt nhạc';this.setAttribute('aria-pressed','true');loop()}else{clearTimeout(timer);audioCtx.suspend();playing=false;this.textContent='♪ Bật nhạc';this.setAttribute('aria-pressed','false')}};
+    const backgroundAudio=document.getElementById('background-audio'),musicButton=document.getElementById('music');backgroundAudio.volume=.42;musicButton.onclick=async function(){if(backgroundAudio.paused){try{await backgroundAudio.play();this.textContent='Ⅱ Tắt nhạc';this.setAttribute('aria-pressed','true')}catch(error){this.textContent='♪ Chạm để bật nhạc'}}else{backgroundAudio.pause();this.textContent='♪ Bật nhạc';this.setAttribute('aria-pressed','false')}};
     document.getElementById('share').onclick=async()=>{const d={title:'Thiệp mời thành hôn',text:'Trân trọng kính mời bạn đến chung vui cùng chúng tôi.',url:inviteUrl};try{if(navigator.share)await navigator.share(d);else await navigator.clipboard.writeText(inviteUrl);alert(navigator.share?'Cảm ơn bạn đã chia sẻ!':'Đã sao chép liên kết thiệp mời.')}catch(e){}};
   </script>
 </body>

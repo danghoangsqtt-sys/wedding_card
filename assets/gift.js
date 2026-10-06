@@ -72,6 +72,12 @@
         })
       });
       const result = await response.json();
+      if (response.ok && result.success === 'false' && /activation/i.test(result.message || '')) {
+        form.reset();
+        status.textContent = 'Lời chúc đã được ghi nhận và đang chờ chú rể xác nhận email FormSubmit để chuyển tiếp.';
+        status.dataset.state = 'pending';
+        return;
+      }
       if (!response.ok || (result.success !== true && result.success !== 'true')) {
         throw new Error('FormSubmit did not accept the message');
       }

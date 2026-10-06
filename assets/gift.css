@@ -6,7 +6,7 @@
 .share-final .share-intro>p:last-child{max-width:35ch;margin:0 auto;color:#f6ddb2;line-height:1.75}
 .gift-invite{position:relative;width:min(100%,600px);margin:34px auto 44px;padding:17px 32px 38px;border:1px solid rgba(237,194,114,.66);background:linear-gradient(145deg,rgba(96,0,18,.9),rgba(59,0,14,.75));box-shadow:0 20px 65px rgba(31,0,6,.27),inset 0 0 35px rgba(234,181,85,.07)}
 .gift-invite:before{content:"";position:absolute;inset:8px;border:1px solid rgba(232,194,119,.25);pointer-events:none}
-.gift-icon{display:block;width:clamp(170px,40vw,270px);height:auto;margin:-11px auto -10px;filter:drop-shadow(0 14px 16px rgba(0,0,0,.24))}
+.gift-icon{display:block;width:clamp(170px,40vw,270px);height:auto;margin:-11px auto 18px;filter:drop-shadow(0 14px 16px rgba(0,0,0,.24))}
 .gift-kicker{margin:0;color:#f5d088!important;font-size:.69rem;font-weight:700;letter-spacing:.23em;text-transform:uppercase}
 .gift-invite h3{margin:6px 0 10px;font:400 clamp(2rem,5vw,3.2rem)/1.12 'DM Serif Display',Georgia,serif;color:#fff1cf}
 .gift-invite>p:not(.gift-kicker){max-width:44ch;margin:0 auto 23px;color:#f4dfbb;line-height:1.7}
@@ -57,3 +57,12 @@ body.gift-opened{overflow:hidden}
 .map-directions{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:50px;padding:13px 23px;border-radius:2px;font:.78rem/1.4 'Be Vietnam Pro',sans-serif;letter-spacing:.065em}
 @media(max-width:700px){.map-section .map-frame{border-width:4px}.map-caption{font-size:.76rem}.map-directions{max-width:100%;padding:13px 15px;font-size:.72rem}}
 @media(prefers-reduced-motion:reduce){.hero .scroll-cue,.invite-copy>.button,.topbar .music,.map-directions{transition:none}}
+
+/* Keep the full wedding date together rather than orphaning the year. */
+.intro .ceremony-note .ceremony-date{white-space:nowrap}
+@media(max-width:700px){
+  .intro .ceremony-note .ceremony-time,.intro .ceremony-note .ceremony-date{display:block}
+  .intro .ceremony-note .ceremony-separator,.intro .ceremony-note .ceremony-lunar-break{display:none}
+  .intro .ceremony-note .ceremony-date{font-size:clamp(.7rem,3.45vw,.88rem);letter-spacing:-.025em;line-height:1.55}
+  .intro .ceremony-note em{display:block;margin-top:2px}
+}

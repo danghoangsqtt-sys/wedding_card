@@ -1,0 +1,45 @@
+/* A ceremonial red-and-gold ending, designed as one continuous invitation. */
+.share-final{display:flex;flex-direction:column;align-items:center;gap:0;padding:clamp(65px,8vw,120px) 18px clamp(78px,8vw,116px);text-align:center;color:#ffedca}
+.share-final .share-intro{max-width:630px}
+.share-final .share-intro .script{margin:0 0 4px}
+.share-final .share-intro .headline{font-size:clamp(2.2rem,5vw,4rem);line-height:1.13;margin:0 0 16px}
+.share-final .share-intro>p:last-child{max-width:35ch;margin:0 auto;color:#f6ddb2;line-height:1.75}
+.gift-invite{position:relative;width:min(100%,600px);margin:34px auto 44px;padding:17px 32px 38px;border:1px solid rgba(237,194,114,.66);background:linear-gradient(145deg,rgba(96,0,18,.9),rgba(59,0,14,.75));box-shadow:0 20px 65px rgba(31,0,6,.27),inset 0 0 35px rgba(234,181,85,.07)}
+.gift-invite:before{content:"";position:absolute;inset:8px;border:1px solid rgba(232,194,119,.25);pointer-events:none}
+.gift-icon{display:block;width:clamp(170px,40vw,270px);height:auto;margin:-11px auto -10px;filter:drop-shadow(0 14px 16px rgba(0,0,0,.24))}
+.gift-kicker{margin:0;color:#f5d088!important;font-size:.69rem;font-weight:700;letter-spacing:.23em;text-transform:uppercase}
+.gift-invite h3{margin:6px 0 10px;font:400 clamp(2rem,5vw,3.2rem)/1.12 'DM Serif Display',Georgia,serif;color:#fff1cf}
+.gift-invite>p:not(.gift-kicker){max-width:44ch;margin:0 auto 23px;color:#f4dfbb;line-height:1.7}
+.gift-open,.share-download,.wish-submit{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:49px;border:1px solid #fff2b8;border-radius:2px;background:linear-gradient(125deg,#a96c26 0%,#fceaa6 29%,#d6a34d 52%,#fff1b5 77%,#a97628 100%);box-shadow:0 8px 22px rgba(29,0,7,.32),inset 0 1px 0 rgba(255,255,255,.65);color:#4c0010;font:700 .83rem 'Be Vietnam Pro',sans-serif;letter-spacing:.035em;text-decoration:none;cursor:pointer;transition:transform .2s ease,box-shadow .2s ease}
+.gift-open{padding:12px 24px}.gift-open:hover,.share-download:hover,.wish-submit:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(29,0,7,.39),inset 0 1px 0 rgba(255,255,255,.65)}
+.gift-open:focus-visible,.share-download:focus-visible,.wish-submit:focus-visible,.gift-close:focus-visible,.wishes-form input:focus-visible,.wishes-form textarea:focus-visible{outline:3px solid #fff2b8;outline-offset:3px}
+.share-art{display:flex;flex-direction:column;align-items:center;width:min(100%,435px);gap:25px}
+.share-final .share-card{display:block;width:100%;max-width:none;margin:0;transform:none;box-shadow:0 15px 40px rgba(20,0,5,.38)}
+.share-final .share-card .share-preview{display:block;width:100%;height:auto}
+.share-download{width:min(100%,320px);padding:13px 20px;font-size:.9rem;text-align:center}
+body.gift-opened{overflow:hidden}
+.gift-modal[hidden]{display:none!important}
+.gift-modal{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:18px;background:rgba(28,0,8,.84);backdrop-filter:blur(7px)}
+.gift-dialog{position:relative;width:min(100%,870px);max-height:min(91svh,850px);overflow-y:auto;padding:30px clamp(19px,4vw,42px) 34px;border:1px solid #d9aa61;outline:8px solid rgba(64,0,13,.7);background:linear-gradient(155deg,#78091c,#4b0010 72%);box-shadow:0 30px 90px rgba(0,0,0,.55);color:#fff0d0;text-align:center}
+.gift-dialog:before{content:"";position:absolute;inset:9px;border:1px solid rgba(241,200,124,.25);pointer-events:none}
+.gift-close{position:absolute;top:10px;right:12px;z-index:1;width:42px;height:42px;border:1px solid #dfb36c;border-radius:50%;background:#540012;color:#ffedbb;font:1.7rem/1 Georgia,serif;cursor:pointer}
+.gift-dialog h2{margin:5px 42px 8px;font:400 clamp(1.7rem,4vw,2.7rem)/1.15 'DM Serif Display',Georgia,serif;color:#fff0cb}
+.gift-dialog-desc{max-width:65ch;margin:0 auto 20px;color:#efd8ad;font-size:.9rem;line-height:1.65}
+.gift-dialog-body{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1fr);align-items:start;gap:clamp(20px,4vw,42px);text-align:left}
+.gift-bank{padding:11px;background:#fff8e9;box-shadow:0 10px 30px rgba(0,0,0,.28);color:#602128;text-align:center}
+.gift-bank img{display:block;width:100%;max-width:350px;height:auto;margin:auto}
+.gift-bank p{max-width:36ch;margin:9px auto 2px;color:#663a34;font-size:.72rem;line-height:1.5}
+.bank-download{display:inline-block;margin:8px auto 4px;padding:8px 12px;border:1px solid #a27142;color:#6b0016;font:700 .7rem 'Be Vietnam Pro',sans-serif;text-decoration:none}.bank-download:hover{background:#f2e1c3}.bank-download:focus-visible{outline:3px solid #8b001e;outline-offset:2px}
+.wishes-form h3{margin:0 0 17px;font:400 1.7rem 'DM Serif Display',Georgia,serif;color:#ffedbf}
+.wishes-form label{display:block;margin:13px 0 6px;color:#f5d694;font-size:.78rem;font-weight:700;letter-spacing:.04em}
+.wishes-form input,.wishes-form textarea{display:block;width:100%;border:1px solid rgba(234,196,129,.7);border-radius:2px;background:#fffaf0;color:#3e141a;padding:12px 13px;font:400 .88rem/1.5 'Be Vietnam Pro',sans-serif}
+.wishes-form textarea{min-height:120px;resize:vertical}
+.wishes-form input::placeholder,.wishes-form textarea::placeholder{color:#846f6a}
+.wishes-honey{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
+.wish-submit{width:100%;margin-top:17px;padding:12px 18px}
+.wish-submit:disabled{cursor:wait;opacity:.65;transform:none}
+.wish-status{min-height:1.5em;margin:12px 0 0;color:#ffe4a4;font-size:.79rem;line-height:1.5}
+.wish-status[data-state="error"]{color:#ffd0cb}
+.wish-privacy{margin:9px 0 0;color:#dec29c;font-size:.69rem;line-height:1.55}
+@media(max-width:700px){.share-final{padding:62px 16px 75px}.gift-invite{margin:30px auto 34px;padding:12px 19px 29px}.gift-icon{width:min(63vw,240px)}.gift-invite h3{font-size:2.15rem}.gift-invite>p:not(.gift-kicker){font-size:.85rem}.share-art{width:min(100%,375px)}.gift-modal{padding:8px}.gift-dialog{max-height:96svh;padding:24px 17px 25px}.gift-dialog h2{margin:8px 36px;font-size:1.75rem}.gift-dialog-desc{font-size:.79rem}.gift-dialog-body{grid-template-columns:1fr;gap:21px}.gift-bank{width:min(100%,330px);margin:auto}.gift-bank img{max-width:270px}.wishes-form h3{font-size:1.5rem}.gift-close{top:7px;right:8px}}
+@media(prefers-reduced-motion:reduce){.gift-open,.share-download,.wish-submit{transition:none}}
